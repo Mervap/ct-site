@@ -1,13 +1,15 @@
 import {Component} from "react";
-import styled from "styled-components";
-import GeneralInfo from "./GeneralInfo";
-
+import CommonInfo from "./GeneralInfo";
+import Description from "./Description";
+import InterviewsPreview from "./InterviewsPreview";
 
 class About extends Component {
   render() {
     return (
       <div>
-        <GeneralInfo />
+        <CommonInfo/>
+        <Description/>
+        <InterviewsPreview/>
       </div>
     );
   }
