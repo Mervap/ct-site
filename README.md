@@ -1,3 +1,5 @@
+![Build](https://github.com/Mervap/ct-site/actions/workflows/build.yml/badge.svg)
+
 ## First of all
 ```shell
 npm install
