@@ -11,6 +11,6 @@ npm start run
 
 ## Run production build
 ```shell
-npm start build
+npm run build
 serve -s build
 ```
