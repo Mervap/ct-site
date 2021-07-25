@@ -5,7 +5,12 @@ import {AdaptiveText, AdaptiveTextProps} from "../../components/AdaptiveText";
 
 const InfoContainer = styled.div`
   width: 100%;
-  min-height: 100vh;
+  @media (max-height: 100vw) {
+    min-height: 100vh;
+  }
+  
+  display: flex;
+  align-items: center;
   position: relative;
   background-color: ${p => p.theme.backgroundColor.primary};
 `
@@ -51,7 +56,6 @@ const DescriptionContainer = styled.div`
   justify-content: center;
   align-items: flex-start;
   overflow-x: hidden;
-  padding-top: 135px;
 
   @media (max-width: 950px) {
     display: block;

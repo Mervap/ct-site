@@ -3,10 +3,13 @@ import styled from "styled-components";
 import {AdaptiveText} from "../../components/AdaptiveText";
 
 const DescriptionOuterContainer = styled.div`
-  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
+
+  @media (max-height: 100vw) {
+    min-height: 100vh;
+  }
 
   @media (max-width: 900px) {
     height: fit-content;

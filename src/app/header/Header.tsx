@@ -39,7 +39,7 @@ const Sections = styled.div`
   ul {
     display: inline-flex;
     list-style-type: none;
-    padding: 20px 2.5% 20px 20px;
+    padding: 20px 2.5%;
     margin: 0;
 
     @media (max-width: 800px) {
