@@ -52,6 +52,7 @@ const Text = styled(AdaptiveText)<TextProps>`
 
 const DescriptionContainer = styled.div`
   width: 100%;
+  padding-bottom: 3%;
   display: flex;
   justify-content: center;
   align-items: flex-start;
