@@ -34,6 +34,13 @@ export const defaultTheme: DefaultTheme = {
         mobileM: '28px',
         mobileS: '26px',
       },
+      lightSubheader: {
+        pc: '30px',
+        tablet: '28px',
+        mobileL: '26px',
+        mobileM: '24px',
+        mobileS: '22px',
+      },
       subsubheader: {
         pc: '24px',
         tablet: '22px',

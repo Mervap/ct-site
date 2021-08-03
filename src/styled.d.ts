@@ -24,6 +24,7 @@ declare module 'styled-components' {
       size: {
         header: AdaptiveFont
         subheader: AdaptiveFont
+        lightSubheader: AdaptiveFont
         subsubheader: AdaptiveFont
         heavyMainText: AdaptiveFont
         mainText: AdaptiveFont

@@ -6,6 +6,7 @@ import styled from "styled-components";
 import {Route, Switch} from "react-router-dom"
 import Footer from "./footer/Footer";
 import {Placeholder} from "./components/Placeholder";
+import Interview from "./body/interview/Interview";
 
 const AppContainer = styled.div`
   height: 100vh;
@@ -19,6 +20,9 @@ class AppWithoutTotalBackground extends Component {
         <Header/>
         <Switch>
           <Route exact path="/" component={About}/>
+          <Route path="/arseniy_seroka_topdevelopers"><Interview/></Route>
+          <Route path="/nastya_postnikova"><Interview/></Route>
+          <Route path="/sasha_drozdova"><Interview/></Route>
           <Placeholder type="header" weight="bold" color="secondary">
             NOT IMPLEMENTED
             <br/>

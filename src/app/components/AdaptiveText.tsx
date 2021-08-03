@@ -2,7 +2,7 @@ import styled, {DefaultTheme, ThemeProps} from "styled-components";
 import {AdaptiveFont} from "../../styled";
 
 export interface AdaptiveTextProps {
-  type?: "header" | "subheader" | "subsubheader" | "heavy_main_text" | "main_text" | "heavy_footnote" | "footnote" | "light_footnote",
+  type?: "header" | "subheader" | "light_subheader" | "subsubheader" | "heavy_main_text" | "main_text" | "heavy_footnote" | "footnote" | "light_footnote",
   weight?: "heavy_bold" | "bold" | "light_bold" | "normal" | "light",
   color: "primary" | "secondary" | "tertiary"
   capitalize?: boolean,
@@ -18,6 +18,9 @@ function matchTextFontSize(p: AdaptiveTextProps & ThemeProps<DefaultTheme>,
       break
     case "subheader":
       font = p.theme.font.size.subheader;
+      break
+    case "light_subheader":
+      font = p.theme.font.size.lightSubheader;
       break
     case "subsubheader":
       font = p.theme.font.size.subsubheader;
