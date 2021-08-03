@@ -23,7 +23,7 @@ class AppWithoutTotalBackground extends Component {
           <Route path="/arseniy_seroka_topdevelopers"><Interview/></Route>
           <Route path="/nastya_postnikova"><Interview/></Route>
           <Route path="/sasha_drozdova"><Interview/></Route>
-          <Placeholder type="header" weight="bold" color="secondary">
+          <Placeholder type="header" weight="bold" textColor="secondary">
             NOT IMPLEMENTED
             <br/>
             {window.location.pathname}

@@ -102,7 +102,7 @@ function ParagraphRenderer(node: any, children: ReactNode, props: any): JSX.Elem
       if (acc.length > 0) {
         let child: ReactChild
         if (prevType === 'img') child = <Images key={paragraphChildren.length}>{acc}</Images>
-        else child = <MainText type="main_text" weight="normal" color="secondary" key={paragraphChildren.length}>
+        else child = <MainText type="main_text" weight="normal" textColor="secondary" key={paragraphChildren.length}>
           {acc}
         </MainText>
         paragraphChildren.push(child)
@@ -176,26 +176,34 @@ class ExactInterview extends Component<ExactInterviewProps> {
       return (
         <div style={{width: '100%', margin: '10% 0 3% 0'}}>
           <ReactMarkdown
+            // @ts-ignore
             rehypePlugins={[rehypeRaw]}
             children={data}
             components={{
               // Header
-              h1: ({node, ...props}) => <TextBlock type="header" weight="heavy_bold" color="secondary"
+              // @ts-ignore
+              h1: ({node, ...props}) => <TextBlock type="header" weight="heavy_bold" textColor="secondary"
                                                    lineHeight={1.23} {...props}/>,
               // Description
-              h2: ({node, ...props}) => <Summary type="light_subheader" weight="normal" color="secondary"
+              // @ts-ignore
+              h2: ({node, ...props}) => <Summary type="light_subheader" weight="normal" textColor='secondary'
                                                  lineHeight={1.35} {...props}/>,
               // Question
+              // @ts-ignore
               h3: ({node, ...props}) => <Question type="subsubheader" weight="heavy_bold"
-                                                  color="secondary" {...props}/>,
+                                                  textColor="secondary" {...props}/>,
               // Answers + gallery images
+              // @ts-ignore
               p: ({node, children, ...props}) => ParagraphRenderer(node, children as [any], props),
               // Just image
+              // @ts-ignore
               img: ({node, ...props}) => <Images>{React.createElement("img", props)}</Images>,
               // Links
+              // @ts-ignore
               a: ({node, href, ...props}) => <InterviewLink to={href as string} {...props}/>,
               // Date
-              h6: ({node, ...props}) => <Date type="light_footnote" weight="heavy_bold" color="tertiary" {...props}/>,
+              // @ts-ignore
+              h6: ({node, ...props}) => <Date type="light_footnote" weight="heavy_bold" textColor="tertiary" {...props}/>,
             }}
           />
         </div>

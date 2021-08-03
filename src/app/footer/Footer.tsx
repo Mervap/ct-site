@@ -35,10 +35,10 @@ class FooterSection extends Component<FooterSectionProps> {
   render() {
     return (
       <FooterSectionContainer>
-        <AdaptiveText type="footnote" weight="heavy_bold" color="tertiary" capitalize>
+        <AdaptiveText type="footnote" weight="heavy_bold" textColor="tertiary" capitalize>
           {this.props.header}
         </AdaptiveText>
-        <AdaptiveText type="light_footnote" weight="normal" color="primary">
+        <AdaptiveText type="light_footnote" weight="normal" textColor="primary">
           <ul>
             {this.props.children}
           </ul>

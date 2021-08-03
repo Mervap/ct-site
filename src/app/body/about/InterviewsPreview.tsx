@@ -109,11 +109,11 @@ class InterviewPreview extends Component<InterviewPreviewProps> {
           <OpacityBackground/>
           <SlideDescription>
             <div style={{padding: "15% 10%"}}>
-              <AdaptiveText type={isLargeCanvas ? "subheader" : "heavy_main_text"} weight="heavy_bold" color="primary" lineHeight={1.35}>
+              <AdaptiveText type={isLargeCanvas ? "subheader" : "heavy_main_text"} weight="heavy_bold" textColor="primary" lineHeight={1.35}>
                 {children[0]}
               </AdaptiveText>
               <div style={{height: "30px"}}/>
-              <AdaptiveText type={isLargeCanvas ? "main_text" : "heavy_footnote"} weight="normal" color="primary">
+              <AdaptiveText type={isLargeCanvas ? "main_text" : "heavy_footnote"} weight="normal" textColor="primary">
                 {children[2]}
               </AdaptiveText>
             </div>
@@ -158,7 +158,7 @@ class InterviewsPreview extends Component {
     return (
       <div style={{backgroundColor: "white"}}>
         <div style={{textAlign: "center", width: "100%", paddingTop: "4%"}}>
-          <AdaptiveText type="subheader" weight="heavy_bold" color="secondary">Интервью со студентами и
+          <AdaptiveText type="subheader" weight="heavy_bold" textColor="secondary">Интервью со студентами и
             выпускниками</AdaptiveText>
         </div>
         <InterviewContainer>
@@ -185,7 +185,7 @@ class InterviewsPreview extends Component {
         <div style={{width: "100%", paddingBottom: "4%"}}>
           <Link to="/interviews">
             <AllInterviewsButton>
-              <AdaptiveText type="subsubheader" weight="heavy_bold" color="secondary" capitalize>
+              <AdaptiveText type="subsubheader" weight="heavy_bold" textColor="secondary" capitalize>
                 Все интервью
               </AdaptiveText>
             </AllInterviewsButton>

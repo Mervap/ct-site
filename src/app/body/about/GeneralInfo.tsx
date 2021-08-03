@@ -121,12 +121,12 @@ class GeneralInfo extends Component {
         <DescriptionContainer>
           <MainDescription>
             <LogoImg src={"/img/about/logo.png"} alt="ITMO University"/>
-            <Text type="header" weight="bold" color="primary" paddingTop={20}>Кафедра КТ</Text>
-            <Text type="heavy_main_text" weight="normal" color="primary" paddingTop={35}>
+            <Text type="header" weight="bold" textColor="primary" paddingTop={20}>Кафедра КТ</Text>
+            <Text type="heavy_main_text" weight="normal" textColor="primary" paddingTop={35}>
               Место, где опытные преподаватели и сотрудники ведущих IT-компаний
               готовят будущих разработчиков, аналитиков и исследователей в области компьютерных наук
             </Text>
-            <Text type="heavy_footnote" weight="light_bold" color="primary" paddingTop={140}>
+            <Text type="heavy_footnote" weight="light_bold" textColor="primary" paddingTop={140}>
               Факультет информационных технологий и программирования
               <br/>
               Направление 01.03.02 Прикладная математика и информатика

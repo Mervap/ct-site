@@ -1,5 +1,5 @@
 export const debounce = <T>(fun: (...args: T[]) => void, ms: number) => {
-  let timer: NodeJS.Timeout | null
+  let timer: number | null
   return (...agrs: T[]) => {
     if (timer !== null) {
       clearTimeout(timer)

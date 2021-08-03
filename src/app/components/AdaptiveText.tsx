@@ -4,7 +4,7 @@ import {AdaptiveFont} from "../../styled";
 export interface AdaptiveTextProps {
   type?: "header" | "subheader" | "light_subheader" | "subsubheader" | "heavy_main_text" | "main_text" | "heavy_footnote" | "footnote" | "light_footnote",
   weight?: "heavy_bold" | "bold" | "light_bold" | "normal" | "light",
-  color: "primary" | "secondary" | "tertiary"
+  textColor: "primary" | "secondary" | "tertiary"
   capitalize?: boolean,
   lineHeight?: number
 }
@@ -48,7 +48,7 @@ function matchTextFontSize(p: AdaptiveTextProps & ThemeProps<DefaultTheme>,
 
 export const AdaptiveText = styled.div<AdaptiveTextProps>`
   color: ${p => {
-    switch (p.color) {
+    switch (p.textColor) {
       case "primary":
         return p.theme.textColor.primary
       case "secondary":

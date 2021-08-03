@@ -49,11 +49,11 @@ class Description extends Component {
       <DescriptionOuterContainer>
         <DescriptionInnerContainer>
           <div className="inner_block">
-            <AdaptiveText type="subheader" weight="heavy_bold" color="secondary" style={{marginBottom: "29px"}}>
+            <AdaptiveText type="subheader" weight="heavy_bold" textColor="secondary" style={{marginBottom: "29px"}}>
               Что такое КТ ИТМО?
             </AdaptiveText>
             <Delimiter/>
-            <AdaptiveText type="main_text" weight="normal" color="secondary"
+            <AdaptiveText type="main_text" weight="normal" textColor="secondary"
                           style={{marginTop: "31px", lineHeight: "30px"}}>
               Наша образовательная программа существует с 1991 года и исторически известна как кафедра КТ. Эта программа
               постоянно совершенствуется, и сегодня кафедра сильно отличается от того, какой она была создана когда-то,
