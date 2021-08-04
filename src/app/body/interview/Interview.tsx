@@ -66,6 +66,7 @@ const Images = styled.div`
     @media (max-width: ${p => React.Children.count(p.children) * minImageSize + 150}px) {
       min-width: unset;
       max-width: unset;
+      max-height: 50vh;
       width: 90%;
     }
   }
@@ -171,7 +172,7 @@ class ExactInterview extends Component<ExactInterviewProps> {
   render() {
     const data = this.state.data
     if (data === undefined) {
-      return (<div>LOADING</div>)
+      return (<div style={{height: '100vh'}}/>)
     } else {
       return (
         <div style={{width: '100%', margin: '10% 0 3% 0'}}>

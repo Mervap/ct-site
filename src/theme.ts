@@ -43,10 +43,10 @@ export const defaultTheme: DefaultTheme = {
       },
       subsubheader: {
         pc: '24px',
-        tablet: '22px',
-        mobileL: '18px',
-        mobileM: '16px',
-        mobileS: '14px',
+        tablet: '20px',
+        mobileL: '19px',
+        mobileM: '18px',
+        mobileS: '17px',
       },
       heavyMainText: {
         pc: '22px',
