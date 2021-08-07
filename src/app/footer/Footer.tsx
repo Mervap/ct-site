@@ -1,8 +1,8 @@
 import {Component} from "react";
 import {SocialIcon as ReactSocialIcon, SocialIconProps} from 'react-social-icons';
 import styled from "styled-components";
-import {Link} from "../components/Link";
-import {AdaptiveText} from "../components/AdaptiveText";
+import {Link} from "../util/components/Link";
+import {AdaptiveText} from "../util/components/AdaptiveText";
 
 const FooterSectionContainer = styled.div`
   padding: 0 20px;

@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import ImageSet from "./ImageSet";
-import {AdaptiveText, AdaptiveTextProps} from "../../components/AdaptiveText";
-import ResizeHandler from "../../components/ResizeHandler";
+import {AdaptiveText, AdaptiveTextProps} from "../../util/components/AdaptiveText";
+import ResizeHandler from "../../util/components/ResizeHandler";
 
 const InfoContainer = styled.div`
   width: 100%;
@@ -103,11 +103,11 @@ class GeneralInfo extends ResizeHandler {
     return (
       <InfoContainer>
         <DownhillImg offset={this.state.currentGradientOffset}>
-          <img src={"/img/about/downhill.svg"} alt=""/>
+          <img src={"/img/index/downhill.svg"} alt=""/>
         </DownhillImg>
         <DescriptionContainer>
           <MainDescription>
-            <LogoImg src={"/img/about/logo.png"} alt="ITMO University"/>
+            <LogoImg src={"/img/index/logo.png"} alt="ITMO University"/>
             <Text type="header" weight="bold" textColor="primary" paddingTop={20}>Кафедра КТ</Text>
             <Text type="heavy_main_text" weight="normal" textColor="primary" paddingTop={35}>
               Место, где опытные преподаватели и сотрудники ведущих IT-компаний

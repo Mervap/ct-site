@@ -1,11 +1,11 @@
 import React, {Component} from 'react';
 import './App.css';
 import Header from "./header/Header";
-import About from "./body/about/About";
+import Index from "./body/index/Index";
 import styled from "styled-components";
 import {Route, Switch} from "react-router-dom"
 import Footer from "./footer/Footer";
-import {Placeholder} from "./components/Placeholder";
+import {Placeholder} from "./util/components/Placeholder";
 import Interview from "./body/interview/Interview";
 import InterviewList from "./body/interview/interviewList/InterviewList";
 
@@ -20,8 +20,8 @@ class AppWithoutTotalBackground extends Component {
       <AppContainer>
         <Header/>
         <Switch>
-          <Route exact path="/" component={About}/>
-          <Route exact path="/interviews"><InterviewList/></Route>
+          <Route exact path="/" component={Index}/>
+          <Route exact path="/interviews" component={InterviewList}/>
           <Route path="/interviews/:name" render={props => <Interview name={props.match.params.name}/>} />
           <Placeholder type="header" weight="bold" textColor="secondary">
             NOT IMPLEMENTED
@@ -62,7 +62,7 @@ function App() {
   return (
     <Switch>
       <Route exact path="/" render={(_) => (
-        <AppWithTotalBackground backgroundImage="/img/about/gk.jpg"/>
+        <AppWithTotalBackground backgroundImage="/img/index/gk.jpg"/>
       )}/>
       <Route exact path="/interviews" render={(_) => (
         <AppWithTotalBackground backgroundImage="/img/interviews/desktop.png"/>

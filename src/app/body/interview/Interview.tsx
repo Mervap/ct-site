@@ -2,11 +2,11 @@ import React, {ReactNode} from "react";
 import {LinkProps} from "react-router-dom";
 import ReactMarkdown from 'react-markdown'
 import rehypeRaw from 'rehype-raw'
-import {AdaptiveText, AdaptiveTextProps} from "../../components/AdaptiveText";
+import {AdaptiveText, AdaptiveTextProps} from "../../util/components/AdaptiveText";
 import styled from "styled-components";
-import {Link} from "../../components/Link";
-import {mergeHeaders} from "../../components/markdownUtil";
-import ResizeHandler from "../../components/ResizeHandler";
+import {Link} from "../../util/components/Link";
+import {mergeHeaders} from "../../util/markdownUtil";
+import ResizeHandler from "../../util/components/ResizeHandler";
 
 const TextBlock = styled(AdaptiveText)<AdaptiveTextProps>`
   padding: 0 4%;
@@ -167,7 +167,7 @@ class Interview extends ResizeHandler<ExactInterviewProps> {
                                                   textColor="secondary" {...props}/>,
               // Answers + gallery images
               // @ts-ignore
-              p: ({node, children, ...props}) => ParagraphRenderer(node, children as [any], props),
+              p: ({node, children, ...props}) => ParagraphRenderer(node, children, props),
               // Just image
               // @ts-ignore
               img: ({node, ...props}) => <Images>{React.createElement("img", props)}</Images>,
@@ -184,4 +184,4 @@ class Interview extends ResizeHandler<ExactInterviewProps> {
     }
   }
 }
-export default Interview
+export default Interview;

@@ -69,22 +69,22 @@ class ImageSet extends Component {
     return (
       <ImageContainer>
         <Image top="70px" left="365px" smallTop="70px" smallLeft="300px">
-          <img style={{width: "75px"}} src={"/img/about/phi.png"} alt="phi"/>
+          <img style={{width: "75px"}} src={"/img/index/phi.png"} alt="phi"/>
         </Image>
         <Image top="175px" left="100px" smallTop="325px" smallLeft="-10px">
-          <img style={{width: "90px"}} src={"/img/about/cloud-computing.png"} alt="Cloud Computing"/>
+          <img style={{width: "90px"}} src={"/img/index/cloud-computing.png"} alt="Cloud Computing"/>
         </Image>
         <Image top="235px" left="430px" smallTop="130px" smallLeft="85px">
-          <img style={{width: "100px"}} src={"/img/about/programmer.png"} alt="Programmer"/>
+          <img style={{width: "100px"}} src={"/img/index/programmer.png"} alt="Programmer"/>
         </Image>
         <Image top="360px" left="235px" smallTop="325px" smallLeft="235px">
-          <img style={{width: "90px"}} src={"/img/about/binary-code.png"} alt="Binary Code"/>
+          <img style={{width: "90px"}} src={"/img/index/binary-code.png"} alt="Binary Code"/>
         </Image>
         <Image top="450px" left="-15px" smallTop="530px" smallLeft="350px">
-          <img style={{width: "80px"}} src={"/img/about/hardware.png"} alt="Hardware"/>
+          <img style={{width: "80px"}} src={"/img/index/hardware.png"} alt="Hardware"/>
         </Image>
         <Image top="490px" left="460px" smallTop="530px" smallLeft="130px">
-          <img style={{width: "90px"}} src={"/img/about/integration.png"} alt="Integration"/>
+          <img style={{width: "90px"}} src={"/img/index/integration.png"} alt="Integration"/>
         </Image>
       </ImageContainer>
     )

@@ -1,5 +1,5 @@
 import styled, {DefaultTheme, ThemeProps} from "styled-components";
-import {AdaptiveFont} from "../../styled";
+import {AdaptiveFont} from "../../../styled";
 
 export interface AdaptiveTextProps {
   type?: "heavy_header" | "header" | "subheader" | "light_subheader" | "subsubheader" | "heavy_main_text" | "main_text" | "heavy_footnote" | "footnote" | "light_footnote",

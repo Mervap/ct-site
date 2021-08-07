@@ -1,6 +1,6 @@
 import {Component} from "react";
 import styled from "styled-components";
-import {AdaptiveText, AdaptiveTextProps} from "../../../components/AdaptiveText";
+import {AdaptiveText, AdaptiveTextProps} from "../../../util/components/AdaptiveText";
 
 const OuterContainer = styled.div`
   width: 100%;

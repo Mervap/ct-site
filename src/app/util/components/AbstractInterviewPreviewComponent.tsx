@@ -1,9 +1,8 @@
 import React from "react";
-import interviewList from "../../interviewList.json";
-import {mergeHeaders} from "./markdownUtil";
+import {mergeHeaders} from "../markdownUtil";
 import styled from "styled-components";
 import ResizeHandler from "./ResizeHandler";
-import {CancellablePromise, makeCancelable} from "./makeCancelable";
+import {CancellablePromise, makeCancelable} from "../makeCancelable";
 
 export const previewBlockMaxWidth = 950 //px
 
@@ -33,16 +32,16 @@ const InterviewContainer = styled.div`
   }
 `
 
-abstract class InterviewPreviewCollector extends ResizeHandler<any, InterviewPreviewCollectorState> {
+abstract class AbstractInterviewPreviewComponent<P = {}, S = {}> extends ResizeHandler<P, S & InterviewPreviewCollectorState> {
 
-  abstract fetchAll: Boolean
-
+  abstract interviewNames: string[]
   abstract renderHeader(): React.ReactNode
-
   abstract renderPreview(info: InterviewInfo, key: number): React.ReactNode
+  abstract initState(): S
 
-  state: InterviewPreviewCollectorState = {
-    interviews: []
+  state: S & InterviewPreviewCollectorState = {
+    interviews: [],
+    ...this.initState()
   }
 
   private promises: Array<CancellablePromise<void>> = []
@@ -50,13 +49,13 @@ abstract class InterviewPreviewCollector extends ResizeHandler<any, InterviewPre
   componentDidMount() {
     super.componentDidMount()
     this.promises = []
-    const names = this.fetchAll ? interviewList.all : interviewList.onIndex
-    names.forEach(name => {
+    this.interviewNames.forEach(name => {
       const promise = fetch("/interviews/" + name + "/preview.md")
         .then(it => it.text())
         .then(text => {
           const processedText = mergeHeaders(text).slice(1).split("\n")
           this.setState({
+            ...this.state,
             interviews: this.state.interviews.concat({
               name: name,
               header: processedText[0].trim(),
@@ -88,4 +87,4 @@ abstract class InterviewPreviewCollector extends ResizeHandler<any, InterviewPre
   }
 }
 
-export default InterviewPreviewCollector
+export default AbstractInterviewPreviewComponent;

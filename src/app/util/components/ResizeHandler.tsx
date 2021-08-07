@@ -1,5 +1,5 @@
 import {Component} from "react";
-import {debounce} from "./debounce";
+import {debounce} from "../debounce";
 
 abstract class ResizeHandler<P = {}, S = {}> extends Component<P, S> {
 

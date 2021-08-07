@@ -1,12 +1,13 @@
 import React, {Component} from "react";
 import styled from "styled-components";
-import {AdaptiveText} from "../../components/AdaptiveText";
-import {Link} from "../../components/Link";
-import InterviewPreviewCollector, {
+import {AdaptiveText} from "../../util/components/AdaptiveText";
+import {Link} from "../../util/components/Link";
+import AbstractInterviewPreviewComponent, {
   InterviewInfo,
   previewBlockMaxWidth
-} from "../../components/InterviewPreviewCollector";
-import ResizeHandler from "../../components/ResizeHandler";
+} from "../../util/components/AbstractInterviewPreviewComponent";
+import ResizeHandler from "../../util/components/ResizeHandler";
+import interviewList from "../../../interviewList.json";
 
 const SlideDescription = styled.div`
   position: absolute;
@@ -123,9 +124,13 @@ const AllInterviewsButton = styled.div`
   align-items: center;
 `
 
-class InterviewsPreviewWithoutButton extends InterviewPreviewCollector {
+class InterviewsPreviewWithoutButton extends AbstractInterviewPreviewComponent {
 
-  fetchAll = false;
+  interviewNames = interviewList.onIndex;
+
+  initState(): {} {
+    return {};
+  }
 
   renderHeader(): React.ReactNode {
     return (
@@ -162,4 +167,4 @@ class InterviewsPreview extends Component {
   }
 }
 
-export default InterviewsPreview
+export default InterviewsPreview;

@@ -3,7 +3,7 @@ import CommonInfo from "./GeneralInfo";
 import Description from "./Description";
 import InterviewsPreview from "./InterviewsPreview";
 
-class About extends Component {
+class Index extends Component {
   render() {
     return (
       <div>
@@ -15,4 +15,4 @@ class About extends Component {
   }
 }
 
-export default About;
+export default Index;

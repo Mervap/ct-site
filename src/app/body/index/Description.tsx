@@ -1,8 +1,8 @@
 import {Component} from "react";
 import styled from "styled-components";
-import {AdaptiveText} from "../../components/AdaptiveText";
+import {AdaptiveText} from "../../util/components/AdaptiveText";
 
-const DescriptionOuterContainer = styled.div`
+const OuterContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -16,7 +16,7 @@ const DescriptionOuterContainer = styled.div`
   }
 `
 
-const DescriptionInnerContainer = styled.div`
+const InnerContainer = styled.div`
   width: 95%;
   max-width: 1100px;
   text-align: center;
@@ -46,8 +46,8 @@ const Delimiter = styled.div`
 class Description extends Component {
   render() {
     return (
-      <DescriptionOuterContainer>
-        <DescriptionInnerContainer>
+      <OuterContainer>
+        <InnerContainer>
           <div className="inner_block">
             <AdaptiveText type="subheader" weight="heavy_bold" textColor="secondary" style={{marginBottom: "29px"}}>
               Что такое КТ ИТМО?
@@ -68,8 +68,8 @@ class Description extends Component {
               Это люди и сообщество, которое они создают.
             </AdaptiveText>
           </div>
-        </DescriptionInnerContainer>
-      </DescriptionOuterContainer>
+        </InnerContainer>
+      </OuterContainer>
     );
   }
 }

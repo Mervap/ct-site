@@ -1,5 +1,5 @@
 import {Component} from "react";
-import {Link} from "../components/Link";
+import {Link} from "../util/components/Link";
 import styled from "styled-components";
 
 const HeaderContainer = styled.div`
