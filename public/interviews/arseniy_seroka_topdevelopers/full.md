@@ -27,9 +27,9 @@
 научное образование. Когда вы работаете плечом к плечу с лучшими специалистами в области, это создает удивительную
 атмосферу, которая способствует постоянному взаимному обучению.
 
-<img src="/img/interview/arseniy_seroka_topdevelopers/main.png" 
+<img src="/img/interviews/arseniy_seroka_topdevelopers/preview.png" 
      alt="Arseniy Seroka" height="600px"/>
-<img src="/img/interview/arseniy_seroka_topdevelopers/flip.png" 
+<img src="/img/interviews/arseniy_seroka_topdevelopers/flip.png" 
      alt="Flipped Arseniy Seroka" height="600px"/>
 
 ### — Какова ваша роль в управлении и развитии Serokell?

@@ -1,11 +1,12 @@
-import React, {Component, ReactNode} from "react";
-import {LinkProps, Route, Switch} from "react-router-dom";
+import React, {ReactNode} from "react";
+import {LinkProps} from "react-router-dom";
 import ReactMarkdown from 'react-markdown'
 import rehypeRaw from 'rehype-raw'
 import {AdaptiveText, AdaptiveTextProps} from "../../components/AdaptiveText";
 import styled from "styled-components";
-import {debounce} from "../../components/debounce";
 import {Link} from "../../components/Link";
+import {mergeHeaders} from "../../components/markdownUtil";
+import ResizeHandler from "../../components/ResizeHandler";
 
 const TextBlock = styled(AdaptiveText)<AdaptiveTextProps>`
   padding: 0 4%;
@@ -51,13 +52,13 @@ const Images = styled.div`
   }
 
   & > & {
-    // hachy hask.....
+    // hacky hack.....
     display: flex;
     justify-content: center;
     margin: 0;
   }
 
-  img {
+  & > div > img, & > img {
     min-width: ${minImageSize}px;
     max-width: ${p => window.innerWidth * 0.9 / React.Children.count(p.children)}px;
     object-position: center;
@@ -116,57 +117,28 @@ function ParagraphRenderer(node: any, children: ReactNode, props: any): JSX.Elem
   return <div style={{width: "100%"}} {...props}> {paragraphChildren}</div>
 }
 
-function countHashes(line: string): number {
-  let count = 0
-  for (const c of line) {
-    if (c === '#') ++count
-    else break
-  }
-  return count
-}
-
-function mergeHeaders(text: string): string {
-  const lines = text.split('\n')
-  let prevHashes = 0
-  let res = ''
-  for (let line of lines) {
-    const hashes = countHashes(line)
-    if (hashes === 0 || hashes !== prevHashes) {
-      res += '\n'
-    } else {
-      line = line.substring(hashes)
-    }
-    res += line
-    prevHashes = hashes
-  }
-  return res
-}
-
 interface ExactInterviewProps {
   name: string
 }
 
-class ExactInterview extends Component<ExactInterviewProps> {
+class Interview extends ResizeHandler<ExactInterviewProps> {
 
   state = {
     data: '',
     width: 0
   }
 
-  safeWidth = debounce((_: Event | undefined) => this.setState({width: window.innerWidth}), 100)
+  protected onResize(width: number, height: number) {
+    this.setState({width: width})
+  }
 
   componentDidMount() {
-    this.safeWidth(undefined)
-    window.addEventListener("resize", this.safeWidth)
-    fetch('/interviews/' + this.props.name + '.md')
+    super.componentDidMount()
+    fetch('/interviews/' + this.props.name + '/full.md')
       .then((r) => r.text())
       .then(text => {
         this.setState({data: mergeHeaders(text)})
       })
-  }
-
-  componentWillUnmount() {
-    window.removeEventListener("resize", this.safeWidth)
   }
 
   render() {
@@ -175,7 +147,7 @@ class ExactInterview extends Component<ExactInterviewProps> {
       return (<div style={{height: '100vh'}}/>)
     } else {
       return (
-        <div style={{width: '100%', margin: '10% 0 3% 0'}}>
+        <div style={{width: '100%', minHeight: '100vh', margin: '10% 0 3% 0'}}>
           <ReactMarkdown
             // @ts-ignore
             rehypePlugins={[rehypeRaw]}
@@ -212,17 +184,4 @@ class ExactInterview extends Component<ExactInterviewProps> {
     }
   }
 }
-
-class Interview extends Component {
-  render() {
-    return (
-      <Switch>
-        <Route path="/arseniy_seroka_topdevelopers"><ExactInterview name="arseniy_seroka_topdevelopers"/></Route>
-        <Route path="/nastya_postnikova"><ExactInterview name="nastya_postnikova"/></Route>
-        <Route path="/sasha_drozdova"><ExactInterview name="sasha_drozdova"/></Route>
-      </Switch>
-    );
-  }
-}
-
 export default Interview

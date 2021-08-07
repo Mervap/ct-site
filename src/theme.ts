@@ -20,6 +20,13 @@ export const defaultTheme: DefaultTheme = {
       light: 200,
     },
     size: {
+      heavyHeader: {
+        pc: '72px',
+        tablet: '68px',
+        mobileL: '38px',
+        mobileM: '36px',
+        mobileS: '34px',
+      },
       header: {
         pc: '52px',
         tablet: '38px',

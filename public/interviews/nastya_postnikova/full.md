@@ -20,7 +20,7 @@
 
 _[Настя поступала с 309 баллами — 100 по русскому языку и информатике, 99 по математике и 10 баллов за индивидуальные достижения.]_
 
-<img src="/img/interview/nastya_postnikova/main.png" alt="Nastya Postnikova" height="550px" width="960px"/>
+<img src="/img/interviews/nastya_postnikova/preview.png" alt="Nastya Postnikova" height="550px" width="960px"/>
 
 ### — Банальный вопрос: почему именно ИТМО?
 

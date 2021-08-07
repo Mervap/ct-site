@@ -1,7 +1,7 @@
-import {Component} from "react";
 import styled from "styled-components";
 import ImageSet from "./ImageSet";
 import {AdaptiveText, AdaptiveTextProps} from "../../components/AdaptiveText";
+import ResizeHandler from "../../components/ResizeHandler";
 
 const InfoContainer = styled.div`
   width: 100%;
@@ -88,28 +88,15 @@ const LogoImg = styled.img`
   }
 `
 
-class GeneralInfo extends Component {
+class GeneralInfo extends ResizeHandler {
 
   state = {
     currentGradientOffset: 0
   }
 
-  recalcGradientOffset = () => {
-    const offset = -350 + window.innerWidth / 2
+  protected onResize(width: number, height: number) {
+    const offset = -350 + width / 2
     this.setState({currentGradientOffset: offset})
-  }
-
-  resizeListener = (_: Event) => {
-    this.recalcGradientOffset()
-  }
-
-  componentDidMount() {
-    this.recalcGradientOffset()
-    window.addEventListener("resize", this.resizeListener)
-  }
-
-  componentWillUnmount() {
-    window.removeEventListener("resize", this.resizeListener)
   }
 
   render() {
